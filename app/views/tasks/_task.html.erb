@@ -1,0 +1,7 @@
+<%= form_for :task, remote: true, :html => { :id => "edit_task_#{task.id}"} do |form| %>
+
+  <%= form.check_box :complete %>
+  <%= form.submit "Update" %>
+  <%= form.label :complete, task.name %>
+  <%= link_to "(remove)", task, method: :delete, data: {confirm: "Are you sure?"}, remote: true %>
+<% end %>
